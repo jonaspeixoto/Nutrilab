@@ -2,5 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def cadastro(request):
-    return HttpResponse('pagina de cadastro')
+    return render(request, 'cadastro.html' )
 
+def logar(request):
+    return HttpResponse('voce está na pagina de login')
