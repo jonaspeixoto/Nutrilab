@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block 'head' %}
+    <link rel="stylesheet" href="{% static 'autenticacao/css/css.css' %}">
+{% endblock %}
+
+{% block 'titulo' %}Home{% endblock %}
+
+{% block 'body' %}
+    <a href="{% url 'sair' %}" class="btn btn-danger btn-lg">Sair</a>
+{% endblock %}

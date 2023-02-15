@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 def cadastro(request):
     
     if request.user.is_authenticated:
-        return HttpResponse('estou logado')
+        return redirect('/pacientes')
 
     if request.method == "GET":
         return render(request, 'cadastro.html' )
@@ -30,7 +30,7 @@ def cadastro(request):
         pass
 def logar(request):
     if request.user.is_authenticated:
-        return HttpResponse('estou logado')
+        return redirect('/pacientes')
 
     if request.method == "GET":
         return render(request, 'login.html')
@@ -45,7 +45,7 @@ def logar(request):
         return redirect('/auth/logar')
     else:
         auth.login(request, usuario)
-        return redirect('/auth/sair')
+        return redirect('/pacientes')
 
 def sair(request):
-    return HttpResponse('estou logado')
+    return redirect('/auth/logar')
